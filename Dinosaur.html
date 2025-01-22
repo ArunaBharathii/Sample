@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prehistoric Era Scene</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #001a33;
+        }
+        #scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url('images/prehistoric_background.jpg') no-repeat center center/cover;
+        }
+        .dinosaur {
+            position: absolute;
+            animation: dino-animation 4s infinite alternate;
+        }
+        .meteor {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, orange, red, darkred);
+            border-radius: 50%;
+            box-shadow: 0 0 15px red;
+            animation: meteor-animation 2s linear infinite;
+        }
+        @keyframes dino-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes meteor-animation {
+            from {
+                transform: translateY(-100px) translateX(0);
+            }
+            to {
+                transform: translateY(100vh) translateX(-50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="scene">
+        <img src="images/dinosaur1.png" class="dinosaur" style="bottom: 50px; left: 100px; width: 200px;">
+        <img src="images/dinosaur2.png" class="dinosaur" style="bottom: 60px; right: 150px; width: 250px;">
+        <div class="meteor" style="top: 20px; left: 50%;"></div>
+        <div class="meteor" style="top: 0; left: 20%; animation-delay: 0.5s;"></div>
+        <div class="meteor" style="top: -40px; right: 25%; animation-delay: 1s;"></div>
+    </div>
+</body>
+</html>
